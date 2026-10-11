@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextStep Careers</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fc;
+      color: #172554;
+    }
+    header {
+      background: #12366b;
+      color: white;
+      padding: 24px 8%;
+    }
+    header h1 { margin: 0; }
+    header p { margin-bottom: 0; }
+    main {
+      max-width: 1000px;
+      margin: 45px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px #17255412;
+    }
+    .card h3 { font-size: 23px; }
+    .card p { color: #52627a; line-height: 1.6; }
+    button {
+      background: #2563eb;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #details {
+      margin-top: 25px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      text-align: left;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NextStep Careers 🎓</h1>
+    <p>Your future. Your next step.</p>
+  </header>  <main>
+    <h2>Choose Your Education Path</h2>
+    <p>Explore courses and find the right next step for your future.</p><div class="courses">
+  <section class="card">
+    <h3>📘 After 10th</h3>
+    <p>Explore Intermediate, Polytechnic, ITI and skill-based courses.</p>
+    <button onclick="showCourses('10th')">Explore Courses</button>
+  </section>
+
+  <section class="card">
+    <h3>🎓 After Inter</h3>
+    <p>Explore Engineering, Medical, Degree, Commerce and more.</p>
+    <button onclick="showCourses('inter')">Explore Courses</button>
+  </section>
+</div>
+
+<div id="details" hidden></div>
+
+  </main>  <footer>© 2026 NextStep Careers · Explore your possibilities</footer>  <script>
+    function showCourses(path) {
+      const details = document.getElementById('details');
+      details.hidden = false;
+
+      if (path === '10th') {
+        details.innerHTML = `
+          <h2>Courses After 10th</h2>
+          <ul>
+            <li>Intermediate: MPC, BiPC, MEC, CEC, HEC</li>
+            <li>Polytechnic Diploma: CSE, ECE, EEE, Civil, Mechanical</li>
+            <li>ITI: Electrician, Fitter, COPA, Welder</li>
+            <li>Skill Courses: Computer basics, design, programming</li>
+          </ul>`;
+      } else {
+        details.innerHTML = `
+          <h2>Courses After Inter</h2>
+          <ul>
+            <li>Engineering: B.Tech, B.E.</li>
+            <li>Healthcare: MBBS, BDS, Pharmacy, Nursing</li>
+            <li>Degree: B.Sc, B.Com, BBA</li>
+            <li>Law, Agriculture, Design, Arts and Humanities</li>
+          </ul>`;
+      }
+
+      details.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script></body>
+</html>
